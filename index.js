@@ -3,7 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const hbs = require("hbs");
 const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
   console.log(`app listening on PORT ${PORT}`);
@@ -55,4 +55,11 @@ app.get("/elements", (req, res) => {
 app.get("*", (req, res) => {
   res.render("404");
   // res.sendFile(__dirname + "/public/404.html"); // content static
+});
+
+app.use("*", (req, res) => {
+  res.render("home", {
+    name: "Nicolas Aristizabal R.",
+    title: "nodeJs course",
+  });
 });
