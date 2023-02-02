@@ -28,7 +28,7 @@ app.use(express.static("public")); // content front-end - content static -- inde
 
 app.get("/", (req, res) => {
   res.render("home", {
-    name: "Nicolas Aristizabal R.",
+    name: "Nicolas Aristizabal Ramirez",
     title: "nodeJs course",
   });
   /*
